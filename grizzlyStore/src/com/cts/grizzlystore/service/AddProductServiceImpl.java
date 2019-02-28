@@ -19,11 +19,9 @@ public class AddProductServiceImpl implements AddProductService {
 			return add_prodImpl;
 		}
 	}
-	@Override
-	public String insert(String id, String cat, String name, String des, float price, String brand, String offer
-			String rating) {
-		
-		return a_dao.insert(id,cat,name,des,price,brand,offer,rating);
-	}
 	
-}
+	public String insert(String id, String cat, String name, String des, float price, String brand, String offer,
+			String rating) {
+		// TODO Auto-generated method stub
+		return a_dao.insert(id,cat,name,des,price,brand,offer,rating);
+	}}

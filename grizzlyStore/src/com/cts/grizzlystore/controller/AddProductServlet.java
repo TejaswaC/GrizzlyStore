@@ -6,6 +6,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.cts.grizzlystore.service.AddProductService;
+import com.cts.grizzlystore.service.AddProductServiceImpl;
+
 
 
 /**
@@ -36,7 +39,7 @@ public class AddProductServlet extends HttpServlet {
 		String category = request.getParameter("category");
 		String name = request.getParameter("productName");
 		String description = request.getParameter("productDescription");
-		String price = request.getParameter("productPrice");
+		Float price = Float.parseFloat(request.getParameter("productPrice"));
 		String brand = request.getParameter("brand");
 		String offer = request.getParameter("offer");
 		String rating = request.getParameter("rating");
@@ -46,8 +49,8 @@ public class AddProductServlet extends HttpServlet {
 		System.out.println(prodId +"  "+ category +"  "+ name + "  "+description + "  "+price + brand+"  "+offer+"  "+rating);
 		
 		
-		//addProductService addproductService = addProductServiceImpl.getInstance();
-		//addproductService.insert(prodId,category,name,description,price,brand);	
+		AddProductService addproductService = AddProductServiceImpl.getInstance();
+		addproductService.insert(prodId,category,name,description,price,brand,offer,rating);	
 		}
 
 }
